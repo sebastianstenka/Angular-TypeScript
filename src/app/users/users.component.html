@@ -1,0 +1,15 @@
+<button (click)='updateUser()'>Dodaj</button>
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>WWW</th>
+    </tr>
+  </thead>
+  <tbody>
+    <app-user class="table-line" *ngFor="let user of users" [user]='user'></app-user>
+  </tbody>
+</table>
