@@ -1,3 +1,16 @@
-<app-users>
-</app-users>
-<app-photo-components></app-photo-components>
+<ul>
+  <li>
+    <a [routerLink]="'/users'"> Lista użytkowników</a>
+  </li>
+  <li>
+    <a [routerLink]="'/photos'"> Lista zdjęć</a>
+  </li>
+  <li>
+    <a [routerLink]="'/albums'"> Lista albumów</a>
+  </li>
+  <li>
+    <a [routerLink]="'posts/search'"> Znajdź posty</a>
+  </li>
+</ul>
+
+<router-outlet></router-outlet>

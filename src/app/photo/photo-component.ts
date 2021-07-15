@@ -3,8 +3,8 @@ import { Photo } from '../model/photo';
 
 @Component({
   selector: 'app-photo-component',
-  templateUrl: './photo-component.component.html',
-  styleUrls: ['./photo-component.component.css']
+  templateUrl: './photo-component.html',
+  styleUrls: ['./photo-component.css']
 })
 export class PhotoComponent implements OnInit {
 

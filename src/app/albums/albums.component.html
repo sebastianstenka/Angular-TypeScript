@@ -1,0 +1,7 @@
+<select name="authors" id="authors" #DropDownValue>
+  <option *ngFor="let user of users" value="{{user.id}}"> {{user.name}} </option>
+</select>
+<button (click)="changeAlbumList(DropDownValue.value)"> Szukaj </button>
+
+
+<app-album *ngFor="let album of filteredAlbums" [album]='album'> </app-album>

@@ -9,7 +9,7 @@ import { Photo } from '../model/photo';
 export class PhotosService {
   constructor(private httpClient: HttpClient) { }
 
-  getPhotos(): Observable<Photo[]> {
-    return this.httpClient.get<Photo[]>("https://jsonplaceholder.typicode.com/photos?albumId=1");
+  getPhotos(id: number): Observable<Photo[]> {
+    return this.httpClient.get<Photo[]>(`https://jsonplaceholder.typicode.com/photos?albumId=${id}`);
   }
 }

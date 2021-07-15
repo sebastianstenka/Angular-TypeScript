@@ -4,5 +4,7 @@
   <td appOnmouseoverRow> {{user.email}} </td>
   <td appOnmouseoverRow> {{user.phone}} </td>
   <td appOnmouseoverRow> {{user.website}} </td>
-  <td appOnmouseoverRow> <button (click)="deleteUser(user)"> Usuń </button> </td>
+  <td appOnmouseoverRow> <button (click)="deleteUser(user.id)"> Usuń </button> </td>
+  <td><button routerLink="/user/details/{{user.id}}"> Szczegóły </button></td>
+
 </tr>

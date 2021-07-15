@@ -1,0 +1,13 @@
+<form #createForm="ngForm" (ngSubmit)="submit(createForm)">
+  <div style="color: red;" *ngIf="firstname.errors">
+    <p *ngIf="firstname.errors.required && (firstname.dirty || firstname.touched)">
+      Imię i nazwisko jest wymagane
+    </p>
+  </div>
+  Imię i nazwisko: <input type="text" name="name" [(ngModel)]="user.name" required #firstname="ngModel" /><br> Email:
+  <input type="text" name="email" #email [(ngModel)]="user.email"><br>
+  Telefon: <input type="text" name="phone" #phone [(ngModel)]="user.phone"><br>
+  Strona WWW: <input type="text" name="website" #website [(ngModel)]="user.website"><br>
+  <br>
+  <input type="submit">
+</form>

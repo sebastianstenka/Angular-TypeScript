@@ -10,6 +10,6 @@
     </tr>
   </thead>
   <tbody>
-    <app-user class="table-line" *ngFor="let user of users" [user]='user'></app-user>
+    <app-user class="table-line" *ngFor="let user of users" [user]='user' (delete)="deleteUser($event)"></app-user>
   </tbody>
 </table>

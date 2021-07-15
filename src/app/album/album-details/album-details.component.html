@@ -1,0 +1,5 @@
+<p>Tytuł: {{album.title}} </p>
+<p>Autor: {{user.name}} </p>
+<p>Album: {{album.id}} </p>
+
+<app-photo-component *ngFor="let photo of photos" [photo]='photo'></app-photo-component>

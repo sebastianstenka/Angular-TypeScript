@@ -15,16 +15,20 @@ export class UsersService {
     })
   }
 
-  getUsers() {
+  getUsers(): Observable<User[]> {
     return this.httpClient.get<User[]>("https://jsonplaceholder.typicode.com/users");
   }
 
+  getUser(id: number): Observable<User> {
+    return this.httpClient.get<User>(`https://jsonplaceholder.typicode.com/users/${id}`);
+  }
+
   updateUser(user: User): Observable<User> {
-    return this.httpClient.put<User>("https://jsonplaceholder.typicode.com/users/1", user, this.httpOpctions);
+    return this.httpClient.put<User>(`https://jsonplaceholder.typicode.com/users/${user.id}`, user, this.httpOpctions);
   }
 
 
-  deleteUser(user: User): Observable<User> {
-    return this.httpClient.delete<User>("https://jsonplaceholder.typicode.com/users/" + user.id, this.httpOpctions);
+  deleteUser(id: number): Observable<User> {
+    return this.httpClient.delete<User>("https://jsonplaceholder.typicode.com/users/" + id, this.httpOpctions);
   }
 }
