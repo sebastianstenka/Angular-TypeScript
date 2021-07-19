@@ -13,6 +13,7 @@ export class AlbumComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    localStorage.setItem('album', JSON.stringify(this.album))
   }
 
 }

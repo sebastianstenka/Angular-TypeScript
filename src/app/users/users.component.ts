@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from '../model/user';
 import { UsersService } from './users.service';
 
@@ -8,6 +9,7 @@ import { UsersService } from './users.service';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
+  formGroup: FormGroup;
   users: User[];
 
   constructor(private usersService: UsersService) {
@@ -16,6 +18,7 @@ export class UsersComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.createForm();
   }
 
   updateUser() {
@@ -24,9 +27,20 @@ export class UsersComponent implements OnInit {
     this.usersService.updateUser(user).subscribe();
   }
 
-  @Output() deleteUser(id: number) {
+  deleteUser(id: number) {
 
     this.users = this.users.filter(u => u.id !== id);
     this.usersService.deleteUser(id).subscribe();
+  }
+
+  createForm() {
+    this.formGroup = new FormGroup({
+      'name': new FormControl(null, Validators.required),
+      'emai': new FormControl(null, Validators.required)
+    });
+  }
+
+  submit() {
+
   }
 }

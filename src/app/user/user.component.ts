@@ -18,4 +18,6 @@ export class UserComponent implements OnInit {
   deleteUser(id: number) {
     this.delete.emit(id);
   }
+
+
 }

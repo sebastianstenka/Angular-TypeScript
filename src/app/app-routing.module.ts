@@ -6,6 +6,7 @@ import { AlbumsResolver } from './albums.resolver';
 import { AlbumsComponent } from './albums/albums.component';
 import { PhotosComponent } from './photos/photos-components';
 import { PhotosResolver } from './photos/photos.resolver';
+import { PostListComponent } from './post/post-list/post-list.component';
 import { UserResolver } from './user.resolver';
 import { DatailsComponent } from './user/datails/datails.component';
 import { UsersResolver } from './users.resolver';
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'users', component: UsersComponent },
   { path: 'photos', component: PhotosComponent },
   { path: 'albums', component: AlbumsComponent, resolve: { usersFromResolver: UsersResolver, albumsFromResolver: AlbumsResolver } },
+  { path: 'post/list', component: PostListComponent },
   { path: 'user/details/:id', component: DatailsComponent, resolve: { userFromResolver: UserResolver } },
   { path: 'album/details/:id', component: AlbumDetailsComponent, resolve: { albumDetailsFromResolver: AlbumDetailsResolver, userFromResolver: UserResolver, photosFromResolver: PhotosResolver } }
 ];

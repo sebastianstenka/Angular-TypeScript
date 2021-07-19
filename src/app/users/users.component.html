@@ -1,4 +1,17 @@
+Reactive Form: dodawanie użytkownika <br>
+<form [formGroup]="formGroup" (ngSubmit)="submit()">
+  <p *ngIf="formGroup.get('name').invalid && formGroup.get('name').touched" style="color: red;"> niepoprawnie nazwa</p>
+  Name <input type="text" formControlName="name">
+  Email <input type="text" formControlName="email">
+  <input type="submit" [disabled]="formGroup.get('name').invalid">
+</form>
+
+<br><br>
+
 <button (click)='updateUser()'>Dodaj</button>
+
+Przykład użycia pipe: {{ '123' | suffixAndPrefixCurrency : 'Kwota do zapłaty' : 'PLN' }}
+
 <table>
   <thead>
     <tr>

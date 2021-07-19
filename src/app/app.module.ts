@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -15,6 +15,8 @@ import { DatailsComponent } from './user/datails/datails.component';
 import { AlbumsComponent } from './albums/albums.component';
 import { AlbumComponent } from './album/album.component';
 import { AlbumDetailsComponent } from './album/album-details/album-details.component';
+import { PostListComponent } from './post/post-list/post-list.component';
+import { SuffixAndPrefixCurrencyPipe } from './pipes/suffix-and-prefix-currency.pipe';
 
 
 @NgModule({
@@ -30,12 +32,15 @@ import { AlbumDetailsComponent } from './album/album-details/album-details.compo
     AlbumsComponent,
     AlbumComponent,
     AlbumDetailsComponent,
+    PostListComponent,
+    SuffixAndPrefixCurrencyPipe,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

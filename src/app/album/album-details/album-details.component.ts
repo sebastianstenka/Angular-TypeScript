@@ -18,9 +18,15 @@ export class AlbumDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.album = this.route.snapshot.data['albumDetailsFromResolver'];
+    //this.album = this.route.snapshot.data['albumDetailsFromResolver'];
+
+    this.album = JSON.parse(localStorage.getItem('album'));
+
+
     this.user = this.route.snapshot.data['userFromResolver'];
     this.photos = this.route.snapshot.data['photosFromResolver'];
+
+
   }
 
 }

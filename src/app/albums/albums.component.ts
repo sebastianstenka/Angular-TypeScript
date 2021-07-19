@@ -31,12 +31,14 @@ export class AlbumsComponent implements OnInit {
     this.filteredAlbums = this.albums;
   }
 
-  changeAlbumList(id: string) { //todo zrobic po dropdown i naprawic
+  changeAlbumList(id: string) {
 
-    if (id == '' || id == null || id == undefined) {
+    if (id == "-1") {
+      this.filteredAlbums = this.albums;
+    } else if (id == '' || id == null || id == undefined) {
       this.filteredAlbums = this.albums;
     } else {
-      this.filteredAlbums = this.albums.filter(album => album.id.toString() == id);
+      this.filteredAlbums = this.albums.filter(album => album.userId.toString() == id);
     }
   }
 }
